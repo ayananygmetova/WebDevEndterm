@@ -24,3 +24,8 @@ class PostValidator(serializers.ModelSerializer):
 class PostUpdateValidator(serializers.Serializer):
     content = serializers.CharField(required=False, allow_null=True)
     file = serializers.FileField(required=False, allow_null=True)
+
+
+class ActionValidator(serializers.Serializer):
+    user_id = serializers.IntegerField()
+    is_liked = serializers.BooleanField()

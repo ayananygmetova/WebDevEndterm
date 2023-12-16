@@ -15,7 +15,7 @@ class Post(models.Model):
     content = models.CharField(max_length=500)
     file = models.FileField(upload_to='content', validators=[validate_file_size, validate_extension], null=True,
                             blank=True)
-    comments = models.ManyToManyField(Comment, null=True, blank=True)
+    comments = models.ManyToManyField(Comment, null=True, blank=True, related_name='post')
     create_datetime = models.DateTimeField(auto_now_add=True)
 
 
